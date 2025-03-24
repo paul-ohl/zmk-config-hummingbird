@@ -47,7 +47,7 @@
         compatible = "zmk,combos";
         combo_z {
             timeout-ms = <50>;
-            key-positions = <0 10>;
+            key-positions = <10 11>;
             bindings = <&kp Z>;
         };
 
@@ -59,7 +59,7 @@
 
         combo_k {
             timeout-ms = <50>;
-            key-positions = <9 19>;
+            key-positions = <18 19>;
             bindings = <&kp SLASH>;
         };
 
@@ -84,7 +84,7 @@
                 &kp Q       &kp W      &kp E      &kp R          &kp T            &kp Y         &kp U       &kp I      &kp O      &kp P
                 &hm LSHFT A &hm LGUI S &hm LALT D &hm LCTRL F    &kp G            &kp H         &hm RCTRL J &hm RALT K &hm LGUI L &hm RSHFT SEMICOLON
                             &kp X      &kp C      &kp V                                         &kp M       &kp COMMA  &kp DOT
-                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lt NUM_L LS(RET)
+                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lt NUM_L ESC
             >;
         };
 
@@ -111,7 +111,7 @@
         num_layer {
             display-name = "Num";
             bindings = <
-                &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR   &kp PERCENT     &kp CARET     &kp AMPS     &kp STAR    &kp LPAR    &kp RPAR
+                &trans       &trans      &trans      &trans       &trans          &trans        &trans       &trans      &trans      &kp DELETE
                 &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
                              &kp RA(N1)  &kp RA(N2)  &kp RA(N3)                                 &trans       &trans      &trans
                                                      &kp LSHFT    &trans          &trans        &trans
