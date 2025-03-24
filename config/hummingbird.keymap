@@ -86,7 +86,7 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-                &kp TAB     &kp HOME   &kp END    &trans         &wkspc N5        &trans        &trans         &trans        &trans         &kp DELETE
+                &kp TAB     &kp HOME   &kp END    &kp LS(TAB)    &wkspc N5        &trans        &trans         &trans        &trans         &kp DELETE
                 &wkspc N1   &wkspc N2  &wkspc N3  &wkspc N4      &wkspc N6        &trans        &hm RCTRL DOWN &hm RALT UP   &hm RGUI RIGHT &kp RSHFT
                             &trans     &trans     &trans                                        &kp LEFT       &trans        &trans
                                                   &trans         &trans           &kp RET       &kp LS(RET)
@@ -96,10 +96,10 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &kp EXCL       &kp AT        &kp HASH      &kp DOLLAR     &kp PERCENT      &kp CARET     &kp AMPS       &kp STAR       &kp PIPE       &kp DOUBLE_QUOTES
-                &hm LSHFT LBRC &hm LGUI LPAR &hm LALT RPAR &hm LCTRL RBRC &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS &hm LALT MINUS &hm LGUI SLASH &hm LSHFT SINGLE_QUOTE
-                               &kp LBKT      &kp RBKT      &kp GRAVE                                     &kp TILDE      &kp LT         &kp GT
-                                                           &kp LSHFT      &trans           &trans        &trans
+                &kp RA(M)       &kp RA(Y)      &kp RA(B)      &kp RA(R)       &kp RA(T)        &kp RA(Q)     &kp RA(U)       &kp RA(I)       &kp RA(N)       &kp RA(SEMICOLON)
+                &hm LSHFT RA(A) &hm LGUI RA(S) &hm LALT RA(D) &hm LCTRL RA(F) &kp RA(G)        &kp RA(H)     &hm LCTRL RA(J) &hm LALT RA(K)  &hm LGUI RA(L)  &hm LSHFT RA(O)
+                                &kp RA(X)      &kp RA(C)      &kp RA(P)                                      &kp RA(Z)       &kp RA(W)       &kp RA(E)
+                                                              &kp LSHFT       &trans           &trans        &trans
             >;
         };
 
