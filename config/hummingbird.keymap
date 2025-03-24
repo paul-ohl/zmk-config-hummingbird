@@ -26,6 +26,18 @@
         };
     };
 
+    macros {
+        wkspc: wkspc {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>; // Must be 1
+            bindings
+                = < &macro_press &kp LG(LA(LSHFT)) >
+                , < &macro_tap &macro_param_1to1 >
+                , < &macro_release &kp LG(LA(LSHFT)) >
+                ;
+        };
+    }
+
     combos {
         compatible = "zmk,combos";
         combo_z {
@@ -43,7 +55,7 @@
         combo_k {
             timeout-ms = <50>;
             key-positions = <9 19>;
-            bindings = <&kp N>;
+            bindings = <&kp SLASH>;
         };
 
         combo_dot {
@@ -67,37 +79,37 @@
                 &kp Q       &kp W      &kp E      &kp R          &kp T            &kp Y         &kp U       &kp I      &kp O      &kp P
                 &hm LSHFT A &hm LGUI S &hm LALT D &hm LCTRL F    &kp G            &kp H         &hm RCTRL J &hm RALT K &hm LGUI L &hm RSHFT SEMICOLON
                             &kp X      &kp C      &kp V                                         &kp M       &kp COMMA  &kp DOT
-                                                  &lt LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lt NUM_L RET
+                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lt NUM_L LS(RET)
             >;
         };
 
         nav_layer {
             display-name = "Nav";
             bindings = <
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &kp UP &kp PG_UP  &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp LEFT       &kp DOWN &kp RIGHT   &trans
-                           &trans     &trans      &trans                                        &kp END        &trans   &kp PG_DN
-                                                  &trans          &trans       &kp ESC          &kp DEL
+                &kp TAB     &kp HOME   &kp END    &kp LS(TAB)    &wkspc 5         &trans        &trans         &kp SCRL_DOWN &trans        &kp DEL
+                &wkspc 1    &wkspc 2   &wkspc 3   &wkspc 4       &wkspc 6         &trans        &hm RCTRL DOWN &hm RALT UP   &hm RGUI RGHT &hm RSHFT SCRL_UP
+                            &kp CUT    &kp COPY   &kp PASTE                                     &kp LEFT       &trans        &trans
+                                                  &trans         &trans           &kp RET       &kp LS(RET)
             >;
         };
 
-        num_layer {
-            display-name = "Num";
-            bindings = <
-                &kp LBKT   &kp N7     &kp N8      &kp N9          &kp RBKT      &trans          &trans         &trans      &trans     &trans
-                &kp SEMI   &kp N4     &kp N5      &kp N6          &kp EQUAL     &trans          &trans         &trans      &trans     &trans
-                           &kp N1     &kp N2      &kp N3                                        &trans         &trans      &trans
-                                                  &kp N0          &kp MINUS     &trans          &trans
-            >;
-        };
-
-        sym_layer {
+        nav_layer {
             display-name = "Sym";
             bindings = <
-                &kp LBRC   &kp LS(N7) &kp LS(N8)  &kp LS(N9)      &kp RBRC      &trans          &trans         &trans      &trans     &trans
-                &kp COLON  &kp LS(N4) &kp LS(N5)  &kp LS(N6)      &kp PLUS      &trans          &trans         &trans      &trans     &trans
-                           &kp LS(N1) &kp LS(N2)  &kp LS(N3)                                    &trans         &trans      &trans
-                                                  &kp LS(N0)      &kp UNDER     &trans          &trans
+                &kp EXCL       &kp AT        &kp HASH      &kp DOLLAR     &kp PERCENT      &kp CARET     &kp AMPS       &kp STAR       &kp PIPE       &kp DOUBLE_QUOTES
+                &hm LSHFT LBRC &hm LGUI LPAR &hm LALT RPAR &hm LCTRL RBRC &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS &hm LALT MINUS &hm LGUI SLASH &hm LSHFT SINGLE_QUOTE
+                               &kp LBKT      &kp RBKT      &kp GRAVE                                     &kp TILDE      &kp LT         &kp GT
+                                                           &kp LSHFT      &trans           &trans        &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "Num";
+            bindings = <
+                &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR   &kp PERCENT     &kp CARET     &kp AMPS     &kp STAR    &kp LPAR    &kp RPAR
+                &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
+                             &kp RA(N1)  &kp RA(N2)  &kp RA(N3)                                 &trans       &trans      &trans
+                                                     &kp LSHFT    &trans          &trans        &trans
             >;
         };
     };
