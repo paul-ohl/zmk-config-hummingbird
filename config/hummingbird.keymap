@@ -31,9 +31,14 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>; // Must be 1
             bindings
-                = < &macro_press &kp LG(LA(LSHFT)) >
-                , < &macro_tap &macro_param_1to1 >
-                , < &macro_release &kp LG(LA(LSHFT)) >
+                = < &macro_press &kp LGUI >
+                , < &macro_press &kp LALT >
+                , < &macro_press &kp LSHFT >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                , < &macro_release &kp LSHFT >
+                , < &macro_release &kp LALT >
+                , < &macro_release &kp LGUI >
                 ;
         };
     };
