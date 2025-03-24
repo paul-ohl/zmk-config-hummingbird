@@ -9,8 +9,8 @@
 
 #define DEF_L 0
 #define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
+#define SYM_L 2
+#define NUM_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -36,7 +36,7 @@
                 , < &macro_release &kp LG(LA(LSHFT)) >
                 ;
         };
-    }
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -86,14 +86,14 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-                &kp TAB     &kp HOME   &kp END    &kp LS(TAB)    &wkspc 5         &trans        &trans         &kp SCRL_DOWN &trans        &kp DEL
-                &wkspc 1    &wkspc 2   &wkspc 3   &wkspc 4       &wkspc 6         &trans        &hm RCTRL DOWN &hm RALT UP   &hm RGUI RGHT &hm RSHFT SCRL_UP
-                            &kp CUT    &kp COPY   &kp PASTE                                     &kp LEFT       &trans        &trans
+                &kp TAB     &kp HOME   &kp END    &trans         &wkspc N5        &trans        &trans         &trans        &trans         &kp DELETE
+                &wkspc N1   &wkspc N2  &wkspc N3  &wkspc N4      &wkspc N6        &trans        &hm RCTRL DOWN &hm RALT UP   &hm RGUI RIGHT &kp RSHFT
+                            &trans     &trans     &trans                                        &kp LEFT       &trans        &trans
                                                   &trans         &trans           &kp RET       &kp LS(RET)
             >;
         };
 
-        nav_layer {
+        sym_layer {
             display-name = "Sym";
             bindings = <
                 &kp EXCL       &kp AT        &kp HASH      &kp DOLLAR     &kp PERCENT      &kp CARET     &kp AMPS       &kp STAR       &kp PIPE       &kp DOUBLE_QUOTES
@@ -103,7 +103,7 @@
             >;
         };
 
-        nav_layer {
+        num_layer {
             display-name = "Num";
             bindings = <
                 &kp EXCL     &kp AT      &kp HASH    &kp DOLLAR   &kp PERCENT     &kp CARET     &kp AMPS     &kp STAR    &kp LPAR    &kp RPAR
