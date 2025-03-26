@@ -13,6 +13,7 @@
 #define SYM_L 2
 #define NUM_L 3
 #define MISC_L 4
+#define LDR_L 5
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -33,12 +34,19 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&sw>;
         };
+        lkm: leader_key_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <225>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sl>;
+        };
     };
 
     macros {
         sw: switch_workspace {
             compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>; // Must be 1
+            #binding-cells = <1>;
             bindings
                 = < &macro_press &kp LGUI >
                 , < &macro_press &kp LALT >
@@ -50,27 +58,16 @@
                 , < &macro_release &kp LGUI >
                 ;
         };
+
+        mail1: mail_personal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = < &macro_press &kp P &kp A &kp U &kp L &kp DOT &kp L &kp V &kp DOT &kp O &kp H &kp L &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M >;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
-        combo_z {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp Z>;
-        };
-
-        combo_b {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp B>;
-        };
-
-        combo_k {
-            timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&kp SLASH>;
-        };
 
         combo_dot {
             timeout-ms = <50>;
@@ -93,7 +90,7 @@
                 &kp Q       &kp W      &kp E      &kp R          &kp T            &kp Y         &kp U       &kp I      &kp O      &kp P
                 &hm LSHFT A &hm LGUI S &hm LALT D &hm LCTRL F    &kp G            &kp H         &hm RCTRL J &hm LALT K &hm RGUI L &hm RSHFT SEMICOLON
                             &kp X      &kp C      &kp V                                         &kp M       &kp COMMA  &kp DOT
-                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lt NUM_L ESC
+                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lkm NUM_L LDR_L
             >;
         };
 
@@ -134,6 +131,16 @@
                 &none       &mkp RCLK  &mkp MCLK    &mkp LCLK      &kp C_PREV       &kp C_NEXT    &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &msc SCRL_UP
                             &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP                                  &mmv MOVE_LEFT &kp C_BRI_DN  &kp C_BRI_UP
                                                     &trans         &trans           &trans        &trans
+            >;
+        };
+
+        leader_layer {
+            display-name = "Leader";
+            bindings = <
+                &none       &none      &none      &none          &none            &none         &mail1      &none      &none      &none
+                &hm LSHFT Z &none      &none      &none          &none            &none         &none       &none      &none      &hm RSHFT K
+                            &none      &none      &kp B                                         &none       &none      &none
+                                                  &trans         &trans           &trans        &none
             >;
         };
     };
