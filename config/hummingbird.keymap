@@ -62,7 +62,7 @@
         mail1: mail_personal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = < &macro_press &kp P &kp A &kp U &kp L &kp DOT &kp L &kp V &kp DOT &kp O &kp H &kp L &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M >;
+            bindings = < &macro_press &kp R &kp A &kp SEMICOLON &kp H &kp N &kp H &kp V &kp N &kp E &kp M &kp H &kp A &kp COMMA &kp U &kp A &kp L &kp H &kp N &kp W &kp E &kp U >;
         };
     };
 
