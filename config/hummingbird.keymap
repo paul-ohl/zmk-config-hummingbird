@@ -39,7 +39,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <225>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&sl>;
+            bindings = <&mo>, <&sl>;
         };
     };
 
@@ -138,7 +138,7 @@
             display-name = "Leader";
             bindings = <
                 &none       &none      &none      &none          &none            &none         &mail1      &none      &none      &none
-                &hm LSHFT Z &none      &none      &none          &none            &none         &none       &none      &none      &hm RSHFT K
+                &hm LSHFT Z &none      &none      &none          &none            &none         &none       &none      &none      &hm RSHFT SLASH
                             &none      &none      &kp B                                         &none       &none      &none
                                                   &trans         &trans           &trans        &none
             >;
