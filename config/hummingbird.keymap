@@ -69,6 +69,18 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_z {
+            timeout-ms = <50>;
+            key-positions = <0 10>;
+            bindings = <&kp Z>;
+        };
+
+        combo_k {
+            timeout-ms = <50>;
+            key-positions = <9 19>;
+            bindings = <&kp SLASH>;
+        };
+
         combo_dot {
             timeout-ms = <50>;
             key-positions = <23 24>;
