@@ -75,6 +75,12 @@
             bindings = <&kp Z>;
         };
 
+        combo_b {
+            timeout-ms = <50>;
+            key-positions = <13 22>;
+            bindings = <&kp B>;
+        };
+
         combo_k {
             timeout-ms = <50>;
             key-positions = <9 19>;
@@ -102,7 +108,7 @@
                 &kp Q       &kp W      &kp E      &kp R          &kp T            &kp Y         &kp U       &kp I      &kp O      &kp P
                 &hm LSHFT A &hm LGUI S &hm LALT D &hm LCTRL F    &kp G            &kp H         &hm RCTRL J &hm LALT K &hm RGUI L &hm RSHFT SEMICOLON
                             &kp X      &kp C      &kp V                                         &kp M       &kp COMMA  &kp DOT
-                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &lkm NUM_L LDR_L
+                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
             >;
         };
 
