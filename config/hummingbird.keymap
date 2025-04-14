@@ -13,7 +13,6 @@
 #define SYM_L 2
 #define NUM_L 3
 #define MISC_L 4
-#define LDR_L 5
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -57,12 +56,6 @@
                 , < &macro_release &kp LALT >
                 , < &macro_release &kp LGUI >
                 ;
-        };
-
-        mail1: mail_personal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = < &macro_press &kp R &kp A &kp SEMICOLON &kp H &kp N &kp H &kp V &kp N &kp E &kp M &kp H &kp A &kp COMMA &kp U &kp A &kp L &kp H &kp N &kp W &kp E &kp U >;
         };
     };
 
@@ -137,7 +130,7 @@
             bindings = <
                 &none        &none       &none       &none        &kp N5          &kp N6        &none        &none       &none       &kp DELETE
                 &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
-                             &kp RS(N1)  &kp RS(N2)  &kp RS(N3)                                 &none        &none       &none 
+                             &kp RS(N1)  &kp RS(N2)  &kp RS(N3)                                 &kp N        &none       &kp RA(L)
                                                      &kp LSHFT    &trans          &trans        &trans
             >;
         };
@@ -149,16 +142,6 @@
                 &none       &mkp RCLK  &mkp MCLK    &mkp LCLK      &kp C_NEXT       &kp C_PREV    &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &msc SCRL_UP
                             &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP                                  &mmv MOVE_LEFT &kp C_BRI_DN  &kp C_BRI_UP
                                                     &trans         &trans           &trans        &trans
-            >;
-        };
-
-        leader_layer {
-            display-name = "Leader";
-            bindings = <
-                &none       &none      &none      &none          &none            &none         &mail1      &none      &none      &none
-                &hm LSHFT Z &none      &none      &none          &none            &none         &none       &none      &none      &hm RSHFT SLASH
-                            &none      &none      &kp B                                         &kp C_PP    &kp C_PREV &kp C_NEXT
-                                                  &trans         &trans           &to DEF_L     &to DEF_L
             >;
         };
     };
