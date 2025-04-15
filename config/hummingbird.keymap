@@ -110,7 +110,7 @@
             bindings = <
                 &kp TAB        &kp HOME      &kp END       &kp LS(TAB)   &sw N6        &none          &none          &none         &none          &kp DELETE
                 &swm LSHFT N1  &swm LGUI N2  &swm LALT N3  &swm LCTRL N4 &sw N5        &none          &hm RCTRL DOWN &hm LALT UP   &hm RGUI RIGHT &kp RSHFT
-                               &kp LC(X)     &kp LC(C)     &kp LC(V)                                  &kp LEFT       &none         &none
+                               &kp LC(X)     &kp LC(W)     &kp LC(V)                                  &kp LEFT       &none         &none
                                                            &trans        &trans        &lt MISC_L RET &kp LS(RET)
             >;
         };
