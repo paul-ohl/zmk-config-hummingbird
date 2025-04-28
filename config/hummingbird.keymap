@@ -91,18 +91,6 @@
             key-positions = <24 25>;
             bindings = <&kp LS(N)>;
         };
-
-        combo_caps_lock {
-            timeout-ms = <50>;
-            key-positions = <1 8>;
-            bindings = <&kp CAPSLOCK>;
-        };
-
-        combo_caps_word {
-            timeout-ms = <50>;
-            key-positions = <2 7>;
-            bindings = <&caps_word>;
-        };
     };
 
     keymap {
