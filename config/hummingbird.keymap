@@ -72,7 +72,7 @@
         combo_w {
             timeout-ms = <50>;
             key-positions = <3 13>;
-            bindings = <&kp T>;
+            bindings = <&kp W>;
         };
 
         combo_k {
@@ -111,7 +111,7 @@
             bindings = <
                 &kp TAB        &kp HOME      &kp END       &kp LS(TAB)   &sw N6        &none          &none          &none         &none          &kp DELETE
                 &swm LSHFT N1  &swm LGUI N2  &swm LALT N3  &swm LCTRL N4 &sw N5        &none          &hm RCTRL DOWN &hm LALT UP   &hm RGUI RIGHT &kp RSHFT
-                               &kp LC(X)     &kp LC(W)     &kp LC(V)                                  &kp LEFT       &none         &none
+                               &kp LC(X)     &kp LC(C)     &kp LC(V)                                  &kp LEFT       &none         &none
                                                            &trans        &trans        &lt MISC_L RET &kp LS(RET)
             >;
         };
@@ -119,9 +119,9 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &kp RA(M)       &kp RA(Y)      &kp RA(B)      &kp RA(R)       &kp RA(T)        &kp RA(Q)     &kp RA(U)       &kp RA(I)       &kp RA(N)       &kp DOUBLE_QUOTES
-                &hm LSHFT RA(A) &hm LGUI RA(S) &hm LALT RA(D) &hm LCTRL RA(F) &kp RA(G)        &kp RA(H)     &hm LCTRL RA(J) &hm LALT RA(K)  &hm LGUI RA(L)  &hm LSHFT RA(O)
-                                &kp RA(X)      &kp RA(C)      &kp RA(P)                                      &kp RA(Z)       &kp RA(W)       &kp RA(E)
+                &kp EXCL        &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT      &kp AMPERSAND &kp CARET       &kp ASTERISK    &kp PIPE        &kp DOUBLE_QUOTES
+                &hm LSHFT LBRC  &hm LGUI LPAR  &hm LALT RPAR  &hm LCTRL RBRC  &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS  &hm LALT MINUS  &hm LGUI SLASH  &hm LSHFT SINGLE_QUOTE
+                                &kp LBKT       &kp RBKT       &kp GRAVE                                      &kp TILDE       &kp LESS_THAN   &kp GREATER_THAN
                                                               &kp LSHFT       &lt MISC_L SPACE &trans        &trans
             >;
         };
@@ -131,7 +131,7 @@
             bindings = <
                 &none        &none       &none       &none        &kp N5          &kp N6        &none        &none       &none       &kp DELETE
                 &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
-                             &kp RS(N1)  &kp RS(N2)  &kp RS(N3)                                 &kp N        &none       &kp RA(L)
+                             &none       &none       &none                                      &kp DOT      &none       &kp SLASH
                                                      &kp LSHFT    &trans          &trans        &trans
             >;
         };
