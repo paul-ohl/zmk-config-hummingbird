@@ -105,6 +105,17 @@
                 ;
         };
 
+        cmp_car: compose_accents_caret {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp CARET >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
     };
 
     combos {
@@ -196,8 +207,8 @@
         dead_key_layer {
             display-name = "Dead";
             bindings = <
-                &none       &none      &none        &none          &none            &none         &none          &kp UNDER     &none           &none
-                &cmp_gq A   &cmp_sq E  &cmp_gq E    &none          &none            &none         &none          &none         &none           &none
+                &cmp_car A  &none      &none        &cmp_car O     &none            &none         &none          &kp UNDER     &none           &cmp_car U
+                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &none         &none          &cmp_car I    &none           &cmp_gq U
                             &none      &none        &none                                         &none          &none         &none
                                                     &trans         &trans           &trans        &trans
             >;
