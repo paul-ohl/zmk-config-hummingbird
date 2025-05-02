@@ -126,6 +126,26 @@
                 ;
         };
 
+        cmp_oe: compose_oe_char {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp O >
+                , < &macro_tap &kp E >
+                ;
+        };
+
+        cmp_micro: compose_micro_char {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp M >
+                , < &macro_tap &kp U >
+                ;
+        };
+
     };
 
     combos {
@@ -217,7 +237,7 @@
         dead_key_layer {
             display-name = "Dead";
             bindings = <
-                &cmp_car A  &cedille   &none        &cmp_car O     &none            &none         &none          &kp UNDER     &none           &cmp_car U
+                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &none            &none         &kp MICRO      &kp UNDER     &none           &cmp_car U
                 &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &none         &none          &cmp_car I    &none           &cmp_gq U
                             &none      &none        &none                                         &none          &none         &none
                                                     &trans         &trans           &trans        &trans
@@ -225,3 +245,4 @@
         };
     };
 };
+
