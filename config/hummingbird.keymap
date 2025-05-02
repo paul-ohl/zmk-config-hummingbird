@@ -15,6 +15,8 @@
 #define MISC_L 4
 #define DEAD_L 5
 
+#define COMPOSE_KEY RALT
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
 
@@ -80,6 +82,29 @@
                 , < &macro_release &kp LGUI >
                 ;
         };
+
+        cmp_sq: compose_accents_single_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp SINGLE_QUOTE >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
+        cmp_gq: compose_accents_grave_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp GRAVE >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
     };
 
     combos {
@@ -172,7 +197,7 @@
             display-name = "Dead";
             bindings = <
                 &none       &none      &none        &none          &none            &none         &none          &kp UNDER     &none           &none
-                &none       &none      &none        &none          &none            &none         &none          &none         &none           &none
+                &cmp_gq A   &cmp_sq E  &cmp_gq E    &none          &none            &none         &none          &none         &none           &none
                             &none      &none        &none                                         &none          &none         &none
                                                     &trans         &trans           &trans        &trans
             >;
