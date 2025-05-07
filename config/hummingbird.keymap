@@ -13,6 +13,10 @@
 #define SYM_L 2
 #define NUM_L 3
 #define MISC_L 4
+#define DEAD_L 5
+#define DEAD_UP_L 6
+
+#define COMPOSE_KEY RALT
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -40,6 +44,34 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>;
         };
+
+        dot_col: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        com_scol: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        minus_qm: minus_question {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dead_key: dead_key {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sl DEAD_L>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -57,6 +89,164 @@
                 , < &macro_release &kp LGUI >
                 ;
         };
+
+        cmp_sq: compose_accents_single_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp SINGLE_QUOTE >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
+        cmp_gq: compose_accents_grave_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp GRAVE >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
+        cmp_car: compose_accents_caret {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp CARET >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                ;
+        };
+
+        cedille: compose_cedille {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp COMMA >
+                , < &macro_tap &kp C >
+                ;
+        };
+
+        cmp_oe: compose_oe_char {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp O >
+                , < &macro_tap &kp E >
+                ;
+        };
+
+        cmp_micro: compose_micro_char {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp M >
+                , < &macro_tap &kp U >
+                ;
+        };
+
+        cmp_i_trem: compose_i_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp DOUBLE_QUOTES >
+                , < &macro_tap &kp I >
+                ;
+        };
+
+        cmp_trem: compose_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp DOUBLE_QUOTES >
+                ;
+        };
+
+        cmp_sq_u: compose_accents_single_quote_upper {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp SINGLE_QUOTE >
+                , < &macro_press &kp LSHFT >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
+        cmp_gq_u: compose_accents_grave_quote_upper {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp GRAVE >
+                , < &macro_press &kp LSHFT >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
+        cmp_car_u: compose_accents_caret_upper {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp CARET >
+                , < &macro_press &kp LSHFT >
+                , < &macro_param_1to1 >
+                , < &macro_tap &kp MACRO_PLACEHOLDER >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
+        cedille_u: compose_cedille_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp COMMA >
+                , < &macro_press &kp LSHFT >
+                , < &macro_tap &kp C >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
+        cmp_oe_u: compose_oe_char_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_press &kp LSHFT >
+                , < &macro_tap &kp O >
+                , < &macro_tap &kp E >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
+        cmp_i_trem_u: compose_i_trema_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp DOUBLE_QUOTES >
+                , < &macro_press &kp LSHFT >
+                , < &macro_tap &kp I >
+                , < &macro_release &kp LSHFT >
+                ;
+        };
+
     };
 
     combos {
@@ -71,25 +261,25 @@
         combo_w {
             timeout-ms = <50>;
             key-positions = <3 13>;
-            bindings = <&kp T>;
+            bindings = <&kp W>;
         };
 
         combo_k {
             timeout-ms = <50>;
             key-positions = <9 19>;
-            bindings = <&kp SLASH>;
+            bindings = <&kp K>;
         };
 
         combo_dot {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            bindings = <&kp N>;
+            bindings = <&dot_col>;
         };
 
         combo_colon {
             timeout-ms = <50>;
             key-positions = <24 25>;
-            bindings = <&kp LS(N)>;
+            bindings = <&kp COLON>;
         };
     };
 
@@ -98,9 +288,9 @@
 
         default_layer {
             bindings = <
-                &kp Q       &kp W      &kp E      &kp R          &kp G            &kp Y         &kp U       &kp I      &kp O      &kp P
-                &hm LSHFT A &hm LGUI S &hm LALT D &hm LCTRL F    &kp B            &kp H         &hm RCTRL J &hm LALT K &hm RGUI L &hm RSHFT SEMICOLON
-                            &kp X      &kp C      &kp V                                         &kp M       &kp COMMA  &kp DOT
+                &kp Q       &kp C      &kp O      &kp P          &kp F            &kp J         &kp M       &kp D      &dead_key  &kp Y
+                &hm LSHFT A &hm LGUI S &hm LALT E &hm LCTRL N    &kp B            &kp L         &hm RCTRL R &hm LALT T &hm RGUI I &hm RSHFT U
+                            &kp X      &minus_qm  &kp V                                         &kp H       &kp G      &com_scol
                                                   &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
             >;
         };
@@ -110,7 +300,7 @@
             bindings = <
                 &kp TAB        &kp HOME      &kp END       &kp LS(TAB)   &sw N6        &none          &none          &none         &none          &kp DELETE
                 &swm LSHFT N1  &swm LGUI N2  &swm LALT N3  &swm LCTRL N4 &sw N5        &none          &hm RCTRL DOWN &hm LALT UP   &hm RGUI RIGHT &kp RSHFT
-                               &kp LC(X)     &kp LC(W)     &kp LC(V)                                  &kp LEFT       &none         &none
+                               &kp LC(X)     &kp LC(C)     &kp LC(V)                                  &kp LEFT       &none         &none
                                                            &trans        &trans        &lt MISC_L RET &kp LS(RET)
             >;
         };
@@ -118,9 +308,9 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &kp RA(M)       &kp RA(Y)      &kp RA(B)      &kp RA(R)       &kp RA(T)        &kp RA(Q)     &kp RA(U)       &kp RA(I)       &kp RA(N)       &kp DOUBLE_QUOTES
-                &hm LSHFT RA(A) &hm LGUI RA(S) &hm LALT RA(D) &hm LCTRL RA(F) &kp RA(G)        &kp RA(H)     &hm LCTRL RA(J) &hm LALT RA(K)  &hm LGUI RA(L)  &hm LSHFT RA(O)
-                                &kp RA(X)      &kp RA(C)      &kp RA(P)                                      &kp RA(Z)       &kp RA(W)       &kp RA(E)
+                &kp GRAVE       &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT      &kp CARET     &kp AMPERSAND   &kp ASTERISK    &kp PIPE        &kp DOUBLE_QUOTES
+                &hm LSHFT LBRC  &hm LGUI LPAR  &hm LALT RPAR  &hm LCTRL RBRC  &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS  &hm LALT MINUS  &hm LGUI SLASH  &hm LSHFT SINGLE_QUOTE
+                                &kp LBKT       &kp RBKT       &kp TILDE                                      &kp TILDE       &kp LESS_THAN   &kp GREATER_THAN
                                                               &kp LSHFT       &lt MISC_L SPACE &trans        &trans
             >;
         };
@@ -130,7 +320,7 @@
             bindings = <
                 &none        &none       &none       &none        &kp N5          &kp N6        &none        &none       &none       &kp DELETE
                 &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
-                             &kp RS(N1)  &kp RS(N2)  &kp RS(N3)                                 &kp N        &none       &kp RA(L)
+                             &none       &none       &none                                      &kp DOT      &none       &kp SLASH
                                                      &kp LSHFT    &trans          &trans        &trans
             >;
         };
@@ -138,10 +328,30 @@
         misc_layer {
             display-name = "Misc";
             bindings = <
-                &none       &none      &none        &kp C_PP       &kp C_NEXT       &kp C_PREV    &none          &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT
-                &none       &mkp RCLK  &mkp MCLK    &mkp LCLK      &kp C_NEXT       &kp C_PREV    &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &msc SCRL_UP
+                &kp LCTRL   &none      &none        &kp C_PP       &kp C_NEXT       &kp C_PREV    &none          &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT
+                &kp LSHFT   &mkp RCLK  &mkp MCLK    &mkp LCLK      &kp C_NEXT       &kp C_PREV    &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &msc SCRL_UP
                             &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP                                  &mmv MOVE_LEFT &kp C_BRI_DN  &kp C_BRI_UP
                                                     &trans         &trans           &trans        &trans
+            >;
+        };
+
+        dead_key_layer {
+            display-name = "dead";
+            bindings = <
+                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &none            &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car U
+                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &kp LPAR      &kp RPAR       &cmp_car I    &cmp_i_trem    &cmp_gq U
+                            &none      &none        &none                                         &none          &none         &none
+                                                    &mo DEAD_UP_L  &trans           &trans        &trans
+            >;
+        };
+
+        upper_dead_key_layer {
+            display-name = "DEAD";
+            bindings = <
+                &cmp_car_u A &cedille_u &cmp_oe_u    &cmp_car_u O   &none            &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car_u U
+                &cmp_gq_u A  &cmp_sq_u E &cmp_gq_u E &cmp_car_u E   &none            &kp LPAR      &kp RPAR       &cmp_car_u I  &cmp_i_trem_u  &cmp_gq_u U
+                             &none      &none        &none                                         &none          &none         &none
+                                                     &trans         &trans           &trans        &trans
             >;
         };
     };
