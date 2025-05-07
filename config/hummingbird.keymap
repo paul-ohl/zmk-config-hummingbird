@@ -64,7 +64,6 @@
             bindings = <&kp MINUS>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
     };
 
     macros {
@@ -143,6 +142,25 @@
                 = < &macro_tap &kp COMPOSE_KEY >
                 , < &macro_tap &kp M >
                 , < &macro_tap &kp U >
+                ;
+        };
+
+        cmp_i_trem: compose_i_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp DOUBLE_QUOTE >
+                , < &macro_tap &kp I >
+                ;
+        };
+
+        cmp_trem: compose_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = < &macro_tap &kp COMPOSE_KEY >
+                , < &macro_tap &kp DOUBLE_QUOTE >
                 ;
         };
 
@@ -237,12 +255,11 @@
         dead_key_layer {
             display-name = "Dead";
             bindings = <
-                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &none            &none         &kp MICRO      &kp UNDER     &none           &cmp_car U
-                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &none         &none          &cmp_car I    &none           &cmp_gq U
+                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &none            &none         &kp MICRO      &kp UNDER     &cmp_trema      &cmp_car U
+                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &kp LPAR      &kp RPAR       &cmp_car I    &cmp_i_trema    &cmp_gq U
                             &none      &none        &none                                         &none          &none         &none
                                                     &trans         &trans           &trans        &trans
             >;
         };
     };
 };
-
