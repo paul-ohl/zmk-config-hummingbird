@@ -65,6 +65,13 @@
             bindings = <&kp MINUS>, <&kp QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        dead_key: dead_key {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sl DEAD_L>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -281,7 +288,7 @@
 
         default_layer {
             bindings = <
-                &kp Q       &kp C      &kp O      &kp P          &kp F            &kp J         &kp M       &kp D      &sl DEAD_L &kp Y
+                &kp Q       &kp C      &kp O      &kp P          &kp F            &kp J         &kp M       &kp D      &dead_key  &kp Y
                 &hm LSHFT A &hm LGUI S &hm LALT E &hm LCTRL N    &kp B            &kp L         &hm RCTRL R &hm LALT T &hm RGUI I &hm RSHFT U
                             &kp X      &minus_qm  &kp V                                         &kp H       &kp G      &com_scol
                                                   &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
@@ -301,9 +308,9 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &kp EXCL        &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT      &kp CARET     &kp AMPERSAND   &kp ASTERISK    &kp PIPE        &kp DOUBLE_QUOTES
+                &kp GRAVE       &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT      &kp CARET     &kp AMPERSAND   &kp ASTERISK    &kp PIPE        &kp DOUBLE_QUOTES
                 &hm LSHFT LBRC  &hm LGUI LPAR  &hm LALT RPAR  &hm LCTRL RBRC  &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS  &hm LALT MINUS  &hm LGUI SLASH  &hm LSHFT SINGLE_QUOTE
-                                &kp LBKT       &kp RBKT       &kp GRAVE                                      &kp TILDE       &kp LESS_THAN   &kp GREATER_THAN
+                                &kp LBKT       &kp RBKT       &kp TILDE                                      &kp TILDE       &kp LESS_THAN   &kp GREATER_THAN
                                                               &kp LSHFT       &lt MISC_L SPACE &trans        &trans
             >;
         };
