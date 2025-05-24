@@ -254,19 +254,19 @@
 
         combo_z {
             timeout-ms = <50>;
-            key-positions = <0 10>;
+            key-positions = <0 1>;
             bindings = <&kp Z>;
         };
 
         combo_w {
             timeout-ms = <50>;
-            key-positions = <3 13>;
+            key-positions = <11 12 13>;
             bindings = <&kp W>;
         };
 
         combo_k {
             timeout-ms = <50>;
-            key-positions = <9 19>;
+            key-positions = <9 10>;
             bindings = <&kp K>;
         };
 
