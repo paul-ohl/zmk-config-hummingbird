@@ -266,19 +266,19 @@
 
         combo_k {
             timeout-ms = <50>;
-            key-positions = <9 10>;
+            key-positions = <8 9>;
             bindings = <&kp K>;
         };
 
         combo_dot {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <23 24 25>;
             bindings = <&dot_col>;
         };
 
         combo_colon {
             timeout-ms = <50>;
-            key-positions = <24 25>;
+            key-positions = <16 17 18>;
             bindings = <&kp COLON>;
         };
     };
