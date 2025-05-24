@@ -21,6 +21,13 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
 
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -254,31 +261,31 @@
 
         combo_z {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <10 11>;
             bindings = <&kp Z>;
         };
 
         combo_w {
-            timeout-ms = <50>;
-            key-positions = <11 12 13>;
+            timeout-ms = <20>;
+            key-positions = <12 13>;
             bindings = <&kp W>;
         };
 
         combo_k {
             timeout-ms = <50>;
-            key-positions = <8 9>;
+            key-positions = <18 19>;
             bindings = <&kp K>;
         };
 
         combo_dot {
             timeout-ms = <50>;
-            key-positions = <23 24 25>;
+            key-positions = <16 17>;
             bindings = <&dot_col>;
         };
 
         combo_colon {
             timeout-ms = <50>;
-            key-positions = <16 17 18>;
+            key-positions = <17 18>;
             bindings = <&kp COLON>;
         };
     };
