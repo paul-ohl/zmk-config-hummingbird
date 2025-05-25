@@ -266,15 +266,16 @@
 
         combo_dot {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <24 25>;
             bindings = <&dot_col>;
         };
 
-        combo_colon {
-            timeout-ms = <50>;
-            key-positions = <24 25>;
-            bindings = <&kp COLON>;
-        };
+        /* combo_colon { */
+        /*     timeout-ms = <50>; */
+        /*     key-positions = <24 25>; */
+        /*     bindings = <&kp COLON>; */
+        /* }; */
+
     };
 
     keymap {
