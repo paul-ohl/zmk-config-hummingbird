@@ -258,12 +258,6 @@
             bindings = <&kp Z>;
         };
 
-        combo_w {
-            timeout-ms = <50>;
-            key-positions = <3 13>;
-            bindings = <&kp W>;
-        };
-
         combo_k {
             timeout-ms = <50>;
             key-positions = <9 19>;
@@ -338,9 +332,9 @@
         dead_key_layer {
             display-name = "dead";
             bindings = <
-                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &none            &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car U
-                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &kp LPAR      &kp RPAR       &cmp_car I    &cmp_i_trem    &cmp_gq U
-                            &none      &none        &none                                         &none          &none         &none
+                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &kp W            &none         &kp J          &kp UNDER     &cmp_trem      &cmp_car U
+                &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &kp W            &kp LPAR      &kp RPAR       &cmp_car I    &cmp_i_trem    &cmp_gq U
+                            &none      &none        &none                                         &kp K          &none         &none
                                                     &mo DEAD_UP_L  &trans           &trans        &trans
             >;
         };
@@ -348,9 +342,9 @@
         upper_dead_key_layer {
             display-name = "DEAD";
             bindings = <
-                &cmp_car_u A &cedille_u &cmp_oe_u    &cmp_car_u O   &none            &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car_u U
-                &cmp_gq_u A  &cmp_sq_u E &cmp_gq_u E &cmp_car_u E   &none            &kp LPAR      &kp RPAR       &cmp_car_u I  &cmp_i_trem_u  &cmp_gq_u U
-                             &none      &none        &none                                         &none          &none         &none
+                &cmp_car_u A &cedille_u &cmp_oe_u    &cmp_car_u O   &kp S(W)         &none         &kp S(J)       &kp UNDER     &cmp_trem      &cmp_car_u U
+                &cmp_gq_u A  &cmp_sq_u E &cmp_gq_u E &cmp_car_u E   &kp S(W)         &kp LPAR      &kp RPAR       &cmp_car_u I  &cmp_i_trem_u  &cmp_gq_u U
+                             &none      &none        &none                                         &kp S(K)       &none         &none
                                                      &trans         &trans           &trans        &trans
             >;
         };
