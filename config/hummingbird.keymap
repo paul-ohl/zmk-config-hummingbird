@@ -281,8 +281,14 @@
 
         combo_dot {
             timeout-ms = <50>;
-            key-positions = <24 25>;
+            key-positions = <23 24>;
             bindings = <&dot_col>;
+        };
+
+        combo_col {
+            timeout-ms = <50>;
+            key-positions = <24 25>;
+            bindings = <&kp COLON>;
         };
     };
 
@@ -321,9 +327,9 @@
         num_layer {
             display-name = "Num";
             bindings = <
-                &none        &none       &none       &none        &kp N5          &kp N6        &none        &none       &none       &kp DELETE
-                &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &kp N5          &kp N6        &hm LCTRL N7 &hm LALT N8 &hm LGUI N9 &hm LSHFT N0
-                             &none       &none       &none                                      &kp DOT      &none       &kp SLASH
+                &none        &none       &none       &none        &none           &none         &kp N7       &kp N8      &kp N9      &kp DELETE
+                &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &none           &none         &hm LCTRL N4 &hm LALT N5 &hm LGUI N6 &hm LSHFT N0
+                             &none       &none       &none                                      &kp N1       &kp N2      &kp N3
                                                      &hm LSHFT BSPC &trans        &trans        &trans
             >;
         };
