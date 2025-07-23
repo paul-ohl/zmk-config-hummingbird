@@ -299,7 +299,7 @@
                 &kp Q       &kp C      &kp O      &kp P          &kp F            &kp J         &kp M       &kp D      &dead_key  &kp Y
                 &hm LSHFT A &hm LGUI S &hm LALT E &hm LCTRL N    &kp B            &kp L         &hm RCTRL R &hm LALT T &hm RGUI I &hm RSHFT U
                             &kp X      &minus_qm  &kp V                                         &kp H       &kp G      &com_scol
-                                                  &hm LSHFT BSPC &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
+                                              &hm LSHFT LC(BSPC) &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
             >;
         };
 
