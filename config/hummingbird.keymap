@@ -374,8 +374,8 @@
         gaming_layer {
             display-name = "game";
             bindings = <
-                &kp LCTRL  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I     &kp O  &kp P
-                &kp LSHIFT &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K     &kp L  &kp SEMICOLON
+                &kp LCTRL  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I     &kp O
+                &kp LSHIFT &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K     &kp L
                            &kp X  &kp C  &kp V                &kp M  &kp COLON &kp DOT
                                   &kp LALT  &kp SPACE  &kp ENTER  &kp BACKSPACE
             >;
