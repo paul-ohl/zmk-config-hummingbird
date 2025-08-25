@@ -312,13 +312,13 @@
         };
 
         combo_media_keys_left {
-            timeout-ms = <50>;
+            timeout-ms = <250>;
             key-positions = <1 2 3>;
             bindings = <&mtd>;
         };
 
         combo_media_keys_right {
-            timeout-ms = <50>;
+            timeout-ms = <250>;
             key-positions = <6 7 8>;
             bindings = <&mtd>;
         };
