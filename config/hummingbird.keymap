@@ -77,7 +77,7 @@
         mtd: media_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
         };
     };
@@ -312,13 +312,13 @@
         };
 
         combo_media_keys_left {
-            timeout-ms = <250>;
+            timeout-ms = <50>;
             key-positions = <1 2 3>;
             bindings = <&mtd>;
         };
 
         combo_media_keys_right {
-            timeout-ms = <250>;
+            timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&mtd>;
         };
