@@ -393,7 +393,7 @@
                 &cmp_car_u A &cedille_u &cmp_oe_u    &cmp_car_u O   &kp LS(W)        &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car_u U
                 &cmp_gq_u A  &cmp_sq_u E &cmp_gq_u E &cmp_car_u E   &kp LS(W)        &kp LPAR      &kp RPAR       &cmp_car_u I  &cmp_i_trem_u  &cmp_gq_u U
                              &none      &none        &none                                         &none          &none         &none
-                                                     &trans         &trans           &trans        &trans
+                                                     &to DEF_L      &kp SPACE        &to DEF_L     &to DEF_L
             >;
         };
 
