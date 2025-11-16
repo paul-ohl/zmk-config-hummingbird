@@ -31,6 +31,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        hp: hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <225>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         swm: switch_workspace_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -353,7 +360,7 @@
                 &kp Q       &kp C      &kp O      &kp P          &kp F            &kp J         &kp M       &kp D      &dead_key  &kp Y
                 &hm LSHFT A &hm LGUI S &hm LALT E &hm LCTRL N    &kp B            &kp L         &hm RCTRL R &hm LALT T &hm RGUI I &hm RSHFT U
                             &kp X      &minus_qm  &kp V                                         &kp H       &kp G      &com_scol
-                                              &hm LSHFT BSPC     &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
+                                              &hp LSHFT BSPC     &lt NAV_L SPACE  &lt SYM_L ESC &mo NUM_L
             >;
         };
 
@@ -363,7 +370,7 @@
                 &kp TAB        &kp HOME      &kp END       &kp LS(TAB)   &sw N6        &none          &none          &none         &none          &kp DELETE
                 &swm LSHFT N1  &swm LGUI N2  &swm LALT N3  &swm LCTRL N4 &sw N5        &none          &hm RCTRL DOWN &hm LALT UP   &hm RGUI RIGHT &kp RSHFT
                                &kp LC(X)     &kp LC(C)     &kp LC(V)                                  &kp LEFT       &none         &none
-                                                           &hm LSHFT LC(BSPC) &trans   &lt MISC_L RET &kp LS(RET)
+                                                           &hp LSHFT LC(BSPC) &trans   &lt MISC_L RET &kp LS(RET)
             >;
         };
 
@@ -373,7 +380,7 @@
                 &kp GRAVE       &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT      &kp CARET     &kp AMPERSAND   &kp ASTERISK    &kp PIPE        &kp DOUBLE_QUOTES
                 &hm LSHFT LBRC  &hm LGUI LPAR  &hm LALT RPAR  &hm LCTRL RBRC  &kp EQUAL        &kp BACKSLASH &hm LCTRL PLUS  &hm LALT MINUS  &hm LGUI SLASH  &hm LSHFT SINGLE_QUOTE
                                 &kp LBKT       &kp RBKT       &kp TILDE                                      &kp TILDE       &kp LESS_THAN   &kp GREATER_THAN
-                                                           &hm LSHFT LC(BSPC) &lt MISC_L SPACE &trans        &trans
+                                                           &hp LSHFT LC(BSPC) &lt MISC_L SPACE &trans        &trans
             >;
         };
 
@@ -383,7 +390,7 @@
                 &none        &none       &none       &none        &none           &none         &kp N7       &kp N8      &kp N9      &kp DELETE
                 &hm LSHFT N1 &hm LGUI N2 &hm LALT N3 &hm LCTRL N4 &none           &none         &hm LCTRL N4 &hm LALT N5 &hm LGUI N6 &hm LSHFT N0
                              &none       &none       &none                                      &kp N1       &kp N2      &kp N3
-                                                     &hm LSHFT BSPC &trans        &trans        &trans
+                                                     &hp LSHFT BSPC &trans        &trans        &trans
             >;
         };
 
