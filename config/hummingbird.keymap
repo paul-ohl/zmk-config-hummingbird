@@ -449,7 +449,7 @@
         dead_key_layer {
             display-name = "dead";
             bindings = <
-                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &kp W            &none         &cmp_micro     &kp N8        &cmp_trem      &cmp_car U
+                &cmp_car A  &cedille   &cmp_oe      &cmp_car O     &kp W            &none         &cmp_micro     &kp UNDER     &cmp_trem      &cmp_car U
                 &cmp_gq A   &cmp_sq E  &cmp_gq E    &cmp_car E     &none            &kp LPAR      &kp RPAR       &cmp_car I    &cmp_i_trem    &cmp_gq U
                             &none      &none        &none                                         &cmp_med_pt    &none         &cmp_sus_pt
                                                     &mo DEAD_UP_L  &trans           &trans        &trans
